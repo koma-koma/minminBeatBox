@@ -3,8 +3,8 @@
 #X obj 40 103 env~;
 #X obj 155 90 vu 15 120 empty L -1 -8 0 10 -66577 -1 1 0;
 #X obj 40 125 - 100;
-#X obj 156 37 knob 32 32 0 1 0 0 empty empty empty 0 -8 0 8 2.39008e+06
-1 2.40019e+06 3100 1;
+#X obj 156 37 knob 32 32 0 1 0 0 empty empty empty 0 -8 0 8 3.5192e+06
+1 3.51923e+06 0 1;
 #X obj 21 240 outlet~;
 #X obj 21 31 inlet~;
 #X obj 21 212 hip~ 5;
@@ -15,6 +15,7 @@
 #X obj 90 125 - 100;
 #X obj 71 31 inlet~;
 #X obj 71 240 outlet~;
+#X obj 285 24 r vol;
 #X connect 0 0 1 0;
 #X connect 0 0 7 0;
 #X connect 1 0 3 0;
@@ -29,4 +30,5 @@
 #X connect 10 0 12 0;
 #X connect 12 0 11 0;
 #X connect 13 0 9 0;
+#X connect 15 0 4 0;
 #X coords 0 -1 1 1 100 190 2 150 30;
