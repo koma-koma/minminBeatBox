@@ -18,7 +18,7 @@
 #X obj 251 52 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 353 405 throw~ input;
-#N canvas 387 129 1337 905 oscreceive 1;
+#N canvas 387 129 1337 905 oscreceive 0;
 #X obj 74 90 unpackOSC;
 #X obj 74 134 unpack;
 #X floatatom 11 263 5 0 0 0 - - -, f 5;
@@ -27,7 +27,7 @@
 #X obj 73 282 s y;
 #X obj 279 441 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 307 441 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 307 441 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 334 441 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -64,15 +64,15 @@
 #X obj 344 225 key;
 #X floatatom 344 247 5 0 0 0 - - -, f 5;
 #X obj 344 271 sel 103 104 106 107 108;
-#X obj 78 401 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 78 401 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 105 401 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 105 401 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 132 401 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 132 401 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 160 401 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 160 401 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 187 401 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 187 401 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 105 445 s cicada1;
 #X obj 132 423 s cicada2;
@@ -335,7 +335,7 @@
 #X connect 5 0 3 0;
 #X coords 0 -1 1 1 140 50 2 100 100;
 #X restore 37 389 pd cutoff;
-#N canvas 272 22 647 486 loopers 0;
+#N canvas 114 295 647 486 loopers 0;
 #X obj 114 37 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 160 36 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -352,15 +352,11 @@
 #X obj 52 60 r mute0;
 #X obj 194 82 r track1;
 #X obj 200 62 r mute1;
-#X obj 260 106 units/track;
 #X obj 280 60 r mute2;
 #X obj 277 81 r track2;
 #X obj 427 81 r track3;
 #X obj 426 60 r mute3;
 #X obj 32 106 units/track;
-#X obj 146 106 units/track;
-#X obj 374 106 units/track;
-#X obj 488 106 units/track;
 #X obj 540 60 r mute4;
 #X obj 541 81 r track4;
 #X obj 114 14 r c4;
@@ -368,36 +364,40 @@
 #X obj 206 14 r c16;
 #X obj 250 14 r c32;
 #X obj 302 14 r c64;
-#X connect 0 0 16 1;
-#X connect 1 0 17 1;
-#X connect 2 0 11 1;
-#X connect 3 0 18 1;
-#X connect 4 0 19 1;
-#X connect 5 0 11 0;
-#X connect 5 0 16 0;
-#X connect 5 0 17 0;
-#X connect 5 0 18 0;
-#X connect 5 0 19 0;
-#X connect 7 0 16 2;
-#X connect 8 0 16 3;
-#X connect 9 0 17 2;
-#X connect 10 0 17 3;
-#X connect 11 0 6 0;
-#X connect 12 0 11 3;
-#X connect 13 0 11 2;
-#X connect 14 0 18 2;
-#X connect 15 0 18 3;
-#X connect 16 0 6 0;
-#X connect 17 0 6 0;
-#X connect 18 0 6 0;
-#X connect 19 0 6 0;
-#X connect 20 0 19 3;
-#X connect 21 0 19 2;
-#X connect 22 0 0 0;
-#X connect 23 0 1 0;
-#X connect 24 0 2 0;
-#X connect 25 0 3 0;
-#X connect 26 0 4 0;
+#X obj 260 106 units/track;
+#X obj 146 106 units/track;
+#X obj 374 106 units/track;
+#X obj 488 106 units/track;
+#X connect 0 0 15 1;
+#X connect 1 0 24 1;
+#X connect 2 0 23 1;
+#X connect 3 0 25 1;
+#X connect 4 0 26 1;
+#X connect 5 0 15 0;
+#X connect 5 0 23 0;
+#X connect 5 0 24 0;
+#X connect 5 0 25 0;
+#X connect 5 0 26 0;
+#X connect 7 0 15 2;
+#X connect 8 0 15 3;
+#X connect 9 0 24 2;
+#X connect 10 0 24 3;
+#X connect 11 0 23 3;
+#X connect 12 0 23 2;
+#X connect 13 0 25 2;
+#X connect 14 0 25 3;
+#X connect 15 0 6 0;
+#X connect 16 0 26 3;
+#X connect 17 0 26 2;
+#X connect 18 0 0 0;
+#X connect 19 0 1 0;
+#X connect 20 0 2 0;
+#X connect 21 0 3 0;
+#X connect 22 0 4 0;
+#X connect 23 0 6 0;
+#X connect 24 0 6 0;
+#X connect 25 0 6 0;
+#X connect 26 0 6 0;
 #X coords 0 -1 1 1 570 100 2 30 100;
 #X restore 33 471 pd loopers;
 #X obj 38 89 s c1;
