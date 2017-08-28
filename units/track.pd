@@ -1,0 +1,51 @@
+#N canvas 642 22 450 300 10;
+#X obj 7 26 inlet~;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array \$0-track 352800 float 0;
+#X coords 0 1 352799 -1 100 70 1 0 0;
+#X restore 305 88 graph;
+#X obj 199 40 inlet;
+#X obj 54 95 gate;
+#X msg 165 177 stop;
+#X obj 32 96 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 49 136 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 157 142 gate;
+#X obj 142 165 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 119 154 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 87 70 t b b;
+#X obj 219 211 outlet~;
+#X obj 375 73 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 218 138 spigot;
+#X obj 390 72 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 219 189 tabplay~ \$0-track;
+#X obj 22 215 tabwrite~ \$0-track;
+#X obj 333 42 inlet;
+#X obj 389 44 inlet;
+#X connect 0 0 16 0;
+#X connect 2 0 10 0;
+#X connect 2 0 13 0;
+#X connect 3 0 6 0;
+#X connect 3 0 9 0;
+#X connect 4 0 16 0;
+#X connect 5 0 3 0;
+#X connect 6 0 5 0;
+#X connect 6 0 16 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 8 0 4 0;
+#X connect 9 0 7 0;
+#X connect 10 0 3 1;
+#X connect 10 1 7 1;
+#X connect 12 0 5 0;
+#X connect 13 0 15 0;
+#X connect 14 0 13 1;
+#X connect 15 0 11 0;
+#X connect 17 0 12 0;
+#X connect 18 0 14 0;
+#X coords 0 -1 1 1 110 90 2 300 70;
