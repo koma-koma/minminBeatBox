@@ -18,20 +18,20 @@
 #X obj 251 52 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 353 405 throw~ input;
-#N canvas 387 129 1337 905 oscreceive 0;
+#N canvas 387 129 1337 905 oscreceive 1;
 #X obj 74 90 unpackOSC;
 #X obj 74 134 unpack;
 #X floatatom 11 263 5 0 0 0 - - -, f 5;
 #X floatatom 73 264 5 0 0 0 - - -, f 5;
 #X obj 11 281 s x;
 #X obj 73 282 s y;
-#X obj 279 441 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 279 441 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 307 441 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 307 441 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 334 441 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 334 441 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 362 441 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 362 441 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 389 441 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -51,7 +51,7 @@
 #X obj 427 354 s sample4;
 #X obj 399 334 s sample3;
 #X obj 366 354 s sample2;
-#X obj 338 315 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 338 315 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 366 315 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -64,21 +64,21 @@
 #X obj 344 225 key;
 #X floatatom 344 247 5 0 0 0 - - -, f 5;
 #X obj 344 271 sel 103 104 106 107 108;
-#X obj 69 367 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 78 401 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 96 367 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 105 401 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 123 367 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 132 401 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 151 367 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 160 401 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 178 367 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 187 401 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 96 411 s cicada1;
-#X obj 123 389 s cicada2;
-#X obj 157 411 s cicada3;
-#X obj 184 389 s cicada4;
-#X obj 69 342 sel 0 1 2 3 4;
+#X obj 105 445 s cicada1;
+#X obj 132 423 s cicada2;
+#X obj 166 445 s cicada3;
+#X obj 193 423 s cicada4;
+#X obj 78 376 sel 0 1 2 3 4;
 #X obj 74 68 mrpeach/udpreceive 51200;
 #X obj 276 413 sel 0 1 2 3 4 5;
 #X obj 339 295 sel 0 1 2 3 4;
@@ -99,8 +99,8 @@
 #X obj 409 146 pack 0 100;
 #X obj 409 168 line;
 #X obj 409 190 / 100;
-#X obj 156 320 loadbang;
-#X msg 156 342 1;
+#X obj 184 377 loadbang;
+#X msg 211 400 1;
 #X obj 401 392 loadbang;
 #X msg 401 415 0;
 #X obj 74 112 routeOSC /pos /cicada /track /mute /sample /onoff /vol
@@ -121,7 +121,10 @@
 #X obj 188 263 s track2;
 #X obj 213 285 s track3;
 #X obj 243 263 s track4;
-#X obj 62 389 s cicada0;
+#X obj 71 423 s cicada0;
+#X obj 81 310 key;
+#X floatatom 81 332 5 0 0 0 - - -, f 5;
+#X obj 81 352 sel 121 117 105 111 112;
 #X connect 0 0 68 0;
 #X connect 1 0 57 0;
 #X connect 1 1 59 0;
@@ -221,6 +224,13 @@
 #X connect 72 0 77 0;
 #X connect 73 0 78 0;
 #X connect 74 0 79 0;
+#X connect 81 0 82 0;
+#X connect 82 0 83 0;
+#X connect 83 0 35 0;
+#X connect 83 1 36 0;
+#X connect 83 2 37 0;
+#X connect 83 3 38 0;
+#X connect 83 4 39 0;
 #X restore 178 19 pd oscreceive;
 #N canvas 908 319 450 300 setup 0;
 #X obj 92 118 key;
@@ -404,7 +414,7 @@
 1;
 #X obj 144 256 throw~ out;
 #X obj 29 99 spigot;
-#X obj 29 125 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 29 125 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 29 256 throw~ out;
 #X obj 259 99 spigot;
